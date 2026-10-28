@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+
+# Build
+build/
+dist/
+android/build/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude
+.claude/
+
+# Credentials
+.env
+local.properties
+*.p8
+*.p12
+*.pem
+*.keystore
+
+# Logs
+*.log
+npm-debug.log*
+
+# Generated files
+*.class
+package-lock.json
+
+# Example app artifacts
+example/node_modules/
+example/android/build/
+example/android/app/build/
+example/android/app/.cxx/
+example/android/.gradle/
+example/android/local.properties
+example/android/com/
+example/ios/Pods/
+example/ios/Podfile.lock
+example/ios/build/
+example/ios/*.xcworkspace/
+example/.gradle/
+example/package-lock.json

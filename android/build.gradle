@@ -1,0 +1,60 @@
+def safeExtGet(prop, fallback) {
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    namespace "ir.abrova.push.reactnative"
+    compileSdkVersion safeExtGet('compileSdkVersion', 36)
+
+    defaultConfig {
+        minSdkVersion safeExtGet('minSdkVersion', 24)
+        targetSdkVersion safeExtGet('targetSdkVersion', 36)
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+        }
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+// The native Abrova Push SDK is published on Abrova Center.
+rootProject.allprojects {
+    repositories {
+        maven { url "https://center.abrova.ir/api/packages/abrova/maven" }
+    }
+}
+
+dependencies {
+    implementation "com.facebook.react:react-android:+"
+
+    // Abrova Push Android SDK, from Abrova Center (it brings ir.abrova:pn-protocol with it)
+    implementation 'ir.abrova:abrova-push-android:0.1.19'
+
+    // Lifecycle (for ProcessLifecycleOwner - foreground/background detection)
+    implementation 'androidx.lifecycle:lifecycle-process:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ir.abrova.push.reactnative">
+
+    <!-- Permissions are declared by the native SDK (ir.abrova:abrova-push-android) -->
+    <!-- Service and receiver components are also declared by the native SDK manifest -->
+
+</manifest>

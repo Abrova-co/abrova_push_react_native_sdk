@@ -61,11 +61,11 @@ Nothing else changes: messages arriving over both paths are shown once.
 
 ### iOS Setup
 
-Add the native Abrova Push SDK from Abrova Center to your app target in `ios/Podfile`:
+The native Abrova Push SDK comes from Abrova Center. Add these two lines at the top of `ios/Podfile` (the second keeps public pods working):
 
 ```ruby
-pod 'PNProtocol', :git => 'https://center.abrova.ir/abrova/pn-protocol-ios.git', :tag => '0.2.2'
-pod 'AbrovaPushSDK', :git => 'https://center.abrova.ir/abrova/abrova-push-ios-sdk.git', :tag => '0.1.19'
+source 'https://center.abrova.ir/abrova/specs.git'
+source 'https://cdn.cocoapods.org/'
 ```
 
 ```bash

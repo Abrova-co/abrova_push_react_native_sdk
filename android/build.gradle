@@ -52,7 +52,7 @@ dependencies {
     implementation "com.facebook.react:react-android:+"
 
     // Abrova Push Android SDK, from Abrova Center (it brings ir.abrova:pn-protocol with it)
-    implementation 'ir.abrova:abrova-push-android:0.1.19'
+    implementation 'ir.abrova:abrova-push-android:0.1.20'
 
     // Lifecycle (for ProcessLifecycleOwner - foreground/background detection)
     implementation 'androidx.lifecycle:lifecycle-process:2.7.0'

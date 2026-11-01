@@ -1,6 +1,6 @@
 {
   "name": "@abrova/push-react-native",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "Push notification SDK for React Native with in-app messages - Firebase alternative that works everywhere",
   "main": "src/index.ts",
   "types": "src/index.d.ts",

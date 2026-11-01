@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.20] - 2026-11-01
+
+Requires `abrova-push-android:0.1.20` and `AbrovaPushSDK ~> 0.1.18`.
+
+### Fixed
+- Android: after a device restart, messages sent to this device arrive without the app being opened first.
+- Android: a message shown just before the app was closed is confirmed as delivered when it arrives again, so it is not sent repeatedly.
+
 ## [0.1.19] - 2026-10-28
 
 Requires `abrova-push-android:0.1.19` and `AbrovaPushSDK ~> 0.1.18`.

@@ -174,6 +174,13 @@ export interface AbrovaPushMessage {
   collapseKey?: string;
   /** iOS notification category for action buttons */
   category?: string;
+  /**
+   * Notification channel: the key of a channel defined in Abrova Console, or an Android channel your app created
+   * itself. The native SDK shows the notification on it.
+   */
+  channelId?: string;
+  /** The Console channel's definition, added by the server (null for your own channel). */
+  channel?: { id: string; v?: number; importance?: 'high' | 'default' | 'low'; vibrate?: boolean; sound?: string; ios?: string };
   /** Notification priority: 'default', 'high', 'low' */
   priority?: 'default' | 'high' | 'low';
   /** Time to live in seconds */
@@ -1456,6 +1463,8 @@ class AbrovaPush {
       threadId: data.threadId,
       collapseKey: data.collapseKey,
       category: data.category,
+      channelId: data.channelId,
+      channel: data.channel,
       priority: data.priority,
       ttl: data.ttl,
       messageId: data.messageId,

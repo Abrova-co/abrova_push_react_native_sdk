@@ -1049,6 +1049,17 @@ class AbrovaPushReactNativeModule(reactContext: ReactApplicationContext) :
             message.threadId?.let { putString("threadId", it) }
             message.collapseKey?.let { putString("collapseKey", it) }
             message.category?.let { putString("category", it) }
+            message.channelId?.let { putString("channelId", it) }
+            message.channel?.let { ch ->
+                putMap("channel", Arguments.createMap().apply {
+                    ch.id?.let { putString("id", it) }
+                    ch.version?.let { putInt("v", it) }
+                    ch.importance?.let { putString("importance", it) }
+                    ch.vibrate?.let { putBoolean("vibrate", it) }
+                    ch.sound?.let { putString("sound", it) }
+                    ch.ios?.let { putString("ios", it) }
+                })
+            }
             message.priority?.let { putString("priority", it) }
             message.ttl?.let { putInt("ttl", it) }
             message.messageId?.let { putString("messageId", it) }

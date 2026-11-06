@@ -76,6 +76,8 @@ export interface AbrovaPushMessage {
   data?: Record<string, any>;
   /** If true, message was delivered silently without notification */
   silent?: boolean;
+  /** Notification channel the message was sent on (a Console channel key, or your app's own Android channel). */
+  channelId?: string;
 }
 
 /**

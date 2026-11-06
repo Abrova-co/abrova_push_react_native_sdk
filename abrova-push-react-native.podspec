@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   # During development, you can use a local path:
   #   pod 'AbrovaPush', :path => '../../../../ios/AbrovaPush'
   # For production, use the published version from a spec repo or direct URL
-  s.dependency "AbrovaPushSDK", "~> 0.1.18"
+  s.dependency "AbrovaPushSDK", "~> 0.1.20"
 
   s.swift_version = "5.0"
 end

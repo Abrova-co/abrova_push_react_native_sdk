@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.23] - 2026-11-18
+
+Requires `abrova-push-android:0.1.23` and `AbrovaPushSDK ~> 0.1.22`.
+
+### Added
+- Error reports say why (from the native SDKs). With `sendDiagnostics` on (the default), the SDK's own error counts now
+  also carry a short reason from a fixed list (for example `timeout`, `dns`, `tls`, an MQTT or HTTP status code), the
+  port and the network type (Wi-Fi or mobile). Never a message, address, user or device detail.
+- New error code `1007` (connection setup failed) in `onDetailedError`: a connection that failed while it was being
+  set up, before any network traffic. It was reported as `9999` before.
+
+### Security
+- Tokens and passwords are never written to the log.
+
 ## [0.1.22] - 2026-11-15
 
 Requires `abrova-push-android:0.1.22` and `AbrovaPushSDK ~> 0.1.21`.
